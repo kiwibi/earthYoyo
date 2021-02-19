@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class earthMovement : MonoBehaviour
 {
+    private float smoothSpeed = 0.05f;
+    public Vector3 offset_;
     
     void Start()
     {
-        Cursor.visible = false;
+        Cursor.visible = true;
     }
 
     void Update()
     {
-        transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
+        //transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
+    }
+
+    private void FixedUpdate()
+    {
+        Vector3 desiredPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+        transform.position = smoothedPosition;
     }
 }
