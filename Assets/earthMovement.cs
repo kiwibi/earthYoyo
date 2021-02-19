@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class earthMovement : MonoBehaviour
 {
-    private float smoothSpeed = 0.05f;
+    public float smoothSpeed = 0.05f;
     public Vector3 offset_;
     
     void Start()
     {
-        Cursor.visible = true;
+        Cursor.visible = false;
     }
 
     void Update()
