@@ -7,7 +7,6 @@ public class Attractor : MonoBehaviour
 
     public float G;
     public float minDistance_;
-    public float maxDistance_;
     public Rigidbody2D rb;
 
     private void FixedUpdate()
@@ -28,7 +27,7 @@ public class Attractor : MonoBehaviour
 
         float forceMagnitude = G * (rb.mass * rbToAttract.mass) / Mathf.Pow(distance, 2);
         Vector3 force = direction.normalized * forceMagnitude;
-        if(distance > minDistance_ && distance < maxDistance_)
+        if(distance > minDistance_)
         {
             rbToAttract.AddForce(force);
         }
