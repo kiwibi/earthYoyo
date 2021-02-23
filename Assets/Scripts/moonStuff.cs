@@ -27,13 +27,6 @@ public class moonStuff : MonoBehaviour
         {
             Destroy(col.gameObject);
         }
-        else
-        {
-            Debug.Log("bounce");
-            Vector3 dir = transform.position - earth_.position;
-            Vector3 force = dir.normalized * pushbackPower_;
-            GetComponent<Rigidbody2D>().AddForce(force);
-        }
 
     }
 }
