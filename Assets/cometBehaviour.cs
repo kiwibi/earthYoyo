@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class cometBehaviour : MonoBehaviour
 {
+    public Rigidbody2D rb;
     public GameObject earth_;
     public float BaseSpeed_;
+
+    private SpriteRenderer cometSprite_;
 
     private float distanceToEarth_;
     private float currentSpeed_;
@@ -14,45 +17,30 @@ public class cometBehaviour : MonoBehaviour
     private float changeDirection_;
     void Start()
     {
-        GetNewDirection();
-        changeDirection_ = 0;
-        desiredDir_ = earth_.transform.position;
-        CurrentDir_ = new Vector3(Random.Range(0.0f, 2.0f), Random.Range(0.0f, 2.0f), 0);
-        Debug.Log(CurrentDir_);
+        cometSprite_ = GetComponentInChildren<SpriteRenderer>();
+        CurrentDir_ = earth_.transform.position - transform.position;
+        CurrentDir_.Normalize();
     }
 
     void Update()
     {
         GoTowards();
-        if (Input.GetKey(KeyCode.Space))
-        {
-            CurrentDir_ = new Vector3(Random.Range(0.0f, 2.0f), Random.Range(0.0f, 2.0f), 0);
-            Debug.Log(CurrentDir_);
-        }
-        if (Input.GetKey(KeyCode.M))
-        {
-            GetNewDirection();
-        }
+        Rotate();
     }
 
     void GoTowards()
     {
-        distanceToEarth_ = Vector3.Distance(earth_.transform.position, transform.position);
-        currentSpeed_ = BaseSpeed_ * distanceToEarth_;
-        //transform.Translate(CurrentDir_ * currentSpeed_ * Time.deltaTime);
-        transform.position = Vector3.MoveTowards(transform.position, desiredDir_, currentSpeed_ * Time.deltaTime);
-        GetNewDirection();
+        transform.position += CurrentDir_ * BaseSpeed_ * Time.deltaTime;
     }
 
-    void GetNewDirection()
+    void Rotate()
     {
-        changeDirection_ += Time.deltaTime;
-        if (changeDirection_ > 0.5f)
-        {
-            desiredDir_ = earth_.transform.position;
-            changeDirection_ = 0;
-        }
-
+        Vector3 dir = transform.position - earth_.transform.position;
+        Vector3 up = new Vector3(0, 0, 1);
+        var rotation = Quaternion.LookRotation(dir, up);
+        rotation.x = 0;
+        rotation.y = 0;
+        transform.rotation = rotation;
     }
 
 
