@@ -7,6 +7,7 @@ public class CometSpawner : MonoBehaviour
     public float spawnAmount_;
     public float spawnDelay_;
 
+    public GameObject parent_;
     public GameObject comet_;
 
     private float spawnTimer_;
@@ -35,7 +36,7 @@ public class CometSpawner : MonoBehaviour
         {
             Vector3 tmp = spawnpoints_[Random.Range(0, spawnpoints_.Length)].transform.position;
             tmp.z = 0;
-            var comet = Instantiate(comet_, tmp, Quaternion.identity);
+            var comet = Instantiate(comet_, tmp, Quaternion.identity, parent_.transform);
         }
     }
 }
