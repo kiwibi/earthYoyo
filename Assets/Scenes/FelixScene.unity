@@ -546,7 +546,7 @@ GameObject:
   - component: {fileID: 674965447}
   - component: {fileID: 674965450}
   - component: {fileID: 674965451}
-  - component: {fileID: 674965452}
+  - component: {fileID: 674965448}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Earth
@@ -568,6 +568,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smoothSpeed: 0.05
   offset_: {x: 0, y: 0, z: 0}
+--- !u!114 &674965448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674965446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3592ff978bd678f4dae1e3769dd10d94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AmountOfLives_: 0
+  bandAid_: {fileID: 0}
 --- !u!4 &674965449
 Transform:
   m_ObjectHideFlags: 0
@@ -619,24 +633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 64
   minDistance_: 1
-  maxDistance_: 5
   rb: {fileID: 674965450}
---- !u!58 &674965452
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 674965446}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.03, y: -0.01}
-  serializedVersion: 2
-  m_Radius: 0.68
 --- !u!1 &793930389
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,6 +727,7 @@ GameObject:
   - component: {fileID: 858370225}
   - component: {fileID: 858370224}
   - component: {fileID: 858370223}
+  - component: {fileID: 858370227}
   m_Layer: 0
   m_Name: MoonBouncer
   m_TagString: Untagged
@@ -800,6 +798,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &858370227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858370222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3592ff978bd678f4dae1e3769dd10d94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AmountOfLives_: 0
+  bandAid_: {fileID: 0}
 --- !u!1 &1185501326
 GameObject:
   m_ObjectHideFlags: 0
