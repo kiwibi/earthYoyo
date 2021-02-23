@@ -28,7 +28,7 @@ public class cometBehaviour : MonoBehaviour
     void Update()
     {
         GoTowards();
-        Rotate();
+        //Rotate();
     }
 
     void GoTowards()
