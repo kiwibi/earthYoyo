@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 22446515}
   - component: {fileID: 22446512}
   - component: {fileID: 22446517}
+  - component: {fileID: 22446518}
   m_Layer: 0
   m_Name: moon
   m_TagString: Untagged
@@ -357,6 +358,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   earth_: {fileID: 674965449}
+  pushbackPower_: 300
+--- !u!58 &22446518
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22446511}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.08
 --- !u!1 &47079840
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +471,7 @@ GameObject:
   - component: {fileID: 674965447}
   - component: {fileID: 674965450}
   - component: {fileID: 674965451}
+  - component: {fileID: 674965452}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Earth
@@ -575,6 +594,22 @@ MonoBehaviour:
   minDistance_: 1
   maxDistance_: 5
   rb: {fileID: 674965450}
+--- !u!58 &674965452
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674965446}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.08
 --- !u!1001 &4165494711321094215
 PrefabInstance:
   m_ObjectHideFlags: 0
