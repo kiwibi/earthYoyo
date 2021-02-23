@@ -5,7 +5,7 @@ using UnityEngine;
 public class cometBehaviour : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public GameObject earth_;
+    private GameObject earth_;
     public float BaseSpeed_;
 
     private SpriteRenderer cometSprite_;
@@ -17,9 +17,12 @@ public class cometBehaviour : MonoBehaviour
     private float changeDirection_;
     void Start()
     {
+        earth_ = GameObject.FindGameObjectWithTag("Earth");
         cometSprite_ = GetComponentInChildren<SpriteRenderer>();
         CurrentDir_ = earth_.transform.position - transform.position;
         CurrentDir_.Normalize();
+        CurrentDir_.z = 0;
+
     }
 
     void Update()
