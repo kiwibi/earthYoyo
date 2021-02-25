@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7469317564571752040}
   - component: {fileID: 7469317564571752047}
+  - component: {fileID: 3643348734579472512}
   m_Layer: 0
   m_Name: BandAid
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 7469317564571752046}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05764099, y: 0.05764099, z: 0.05764099}
+  m_LocalScale: {x: 0.035696488, y: 0.035696488, z: 0.035696488}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -70,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 92d96bc84d4670040bcf2dce349ee3db, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9858daf1e29fa09448d2dcee11348747, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -81,3 +82,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3643348734579472512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7469317564571752046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb001e30089c6440b9546d32fdc0a1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

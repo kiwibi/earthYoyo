@@ -4,50 +4,63 @@ using UnityEngine;
 
 public class cameraShake : MonoBehaviour
 {
-    private float camSize;                                                                                                                 
+    private float camSize;
+    private Vector3 originalPos;
     public static cameraShake instance;                                                                                          
     private Camera MainCam;
     private Coroutine LastCoroutine;
 
     public static bool isShaking;
 
-    public enum ShakeTypes
-    {
-        METEORCRASH,
+    public float shakeDuration_;
+    public float zoomShake_;
 
-    }
+    public float bumpDuration_;
+
 
     void Awake()
     {
+        originalPos = transform.position;
         instance = this;                                                                                                                  
         cameraShake.isShaking = false;                                                                                                 
         MainCam = Camera.main;                                                                                                     
 
     }
 
-    public static void Shake(float duration, ShakeTypes type)
+    public static void Shake()
     {
         cameraShake.isShaking = true;                                                                                                   
         instance.camSize = Camera.main.orthographicSize;                                                                                   
-        instance.LastCoroutine = instance.StartCoroutine(instance.cShake(duration, type));                                                         
+        instance.LastCoroutine = instance.StartCoroutine(instance.cShake());                                                         
     }
 
-    public IEnumerator cShake(float duration, ShakeTypes type)
+    public static void bump(Vector3 dir)
     {
-        switch(type)
+        cameraShake.isShaking = true;
+        instance.LastCoroutine = instance.StartCoroutine(instance.cBump(dir));
+    }
+    public IEnumerator cBump(Vector3 dir)
+    {
+        float endTime = Time.time + bumpDuration_;
+        while (Time.time < endTime)
         {
-            case ShakeTypes.METEORCRASH:
-                break;
+
+            transform.position += dir * Time.deltaTime;
+
+            yield return null;
         }
-        float endTime = Time.time + duration;                                                                                           
+        transform.position = originalPos;
+        cameraShake.isShaking = false;
+    }
+    public IEnumerator cShake()
+    {
+        float endTime = Time.time + shakeDuration_;                                                                                           
 
         while (Time.time < endTime)                                                                                               
         {
-            float sizeChange = Random.Range(4.5f, 5.0f);                                                        
+            float sizeChange = Random.Range(zoomShake_, 5.0f);                                                        
             
-            MainCam.orthographicSize = sizeChange;
-            
-            duration -= Time.deltaTime;                                                                                               
+            MainCam.orthographicSize = sizeChange;                                                                                              
 
             yield return null;                                                                                                           
         }

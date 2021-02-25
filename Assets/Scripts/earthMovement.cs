@@ -5,7 +5,6 @@ using UnityEngine;
 public class earthMovement : MonoBehaviour
 {
     public float smoothSpeed = 0.05f;
-    public Vector3 offset_;
     
     void Start()
     {

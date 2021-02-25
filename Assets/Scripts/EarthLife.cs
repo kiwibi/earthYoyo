@@ -5,6 +5,7 @@ using UnityEngine;
 public class EarthLife : MonoBehaviour
 {
     public float AmountOfLives_;
+    public float bandAidFrequency_;
 
     public GameObject bandAid_;
 
@@ -16,6 +17,7 @@ public class EarthLife : MonoBehaviour
         earth_ = GameObject.FindGameObjectWithTag("Earth");
         bandAidAccumulator_ = 0;
         earthScale_ = earth_.transform.GetChild(0).localScale.x;
+        
     }
 
     // Update is called once per frame
@@ -37,10 +39,19 @@ public class EarthLife : MonoBehaviour
         {
             Destroy(col.gameObject);
             AmountOfLives_--;
+            hitFilter.CometEarthHit();
+            cameraShake.Shake();
+            if(AmountOfLives_ <= 0)
+            {
+                //lose
+
+                
+            }
             bandAidAccumulator_++;
-            if(bandAidAccumulator_ >= 3)
+            if(bandAidAccumulator_ >= bandAidFrequency_)
             {
                 Instantiate(bandAid_, getSpawnOnEarth(),Quaternion.identity, earth_.transform.GetChild(0));
+                bandAidAccumulator_ = 0;
             }
         }
     }
