@@ -8,8 +8,10 @@ public class moonStuff : MonoBehaviour
     public Transform earth_;
     public GameObject particleSystem_;
     private Transform hand_;
+    private AudioSource source_;
     void Start()
     {
+        source_ = GetComponent<AudioSource>();
         hand_ = earth_.GetChild(1).transform;
     }
 
@@ -34,6 +36,7 @@ public class moonStuff : MonoBehaviour
         cameraShake.bump(dir);
         if (col.transform.name != "MoonBouncer")
         {
+            source_.Play();
             hitFilter.MoonCometHit();
             var prtSystem = Instantiate(particleSystem_, col.transform.position, Quaternion.identity);
             ParticleSystem parts = prtSystem.GetComponent<ParticleSystem>();
