@@ -39,12 +39,23 @@ public class cometBehaviour : MonoBehaviour
 
     void Rotate()
     {
-        Vector3 up = new Vector3(0, 0, 1);
-        var rotation = Quaternion.LookRotation(rb_.velocity, up);
-        rotation.x = 0;
-        rotation.y = 0;
-        transform.rotation = rotation;
+        if(rb_.velocity != Vector2.zero)
+        {
+            Vector3 up = new Vector3(0, 0, 1);
+            var rotation = Quaternion.LookRotation(rb_.velocity, up);
+            rotation.x = 0;
+            rotation.y = 0;
+            transform.rotation = rotation;
+        }
+        
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.transform.name == "moon")
+        {
+            Destroy(gameObject, 3);
+        }
+    }
 
 }
