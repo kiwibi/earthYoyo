@@ -24,7 +24,6 @@ public class CometSpawner : MonoBehaviour
         currentSpawnAmount_ = initialSpawnAmount_;
     }
 
-    // Update is called once per frame
     void Update()
     {
         upgradeTimer_ += Time.deltaTime;
@@ -49,12 +48,39 @@ public class CometSpawner : MonoBehaviour
 
     void spawnComets()
     {
-        float[] choosenSpawnPoints;
-        for(int i = 0; i < currentSpawnAmount_; i++)
+        List<float> choosenSpawnPoints = new List<float>();
+        if (currentSpawnAmount_ >= spawnpoints_.Length - 1)
         {
-            Vector3 tmp = spawnpoints_[Random.Range(0, spawnpoints_.Length)].transform.position;
-            tmp.z = 0;
-            var comet = Instantiate(comet_, tmp, Quaternion.identity, parent_.transform);
+            foreach (var point in spawnpoints_)
+            {
+                var pos = point.transform.position;
+                pos.z = 0;
+                var comet = Instantiate(comet_, pos, Quaternion.identity, parent_.transform);
+            }
+            return;
         }
+
+        for (int i = 0; i < currentSpawnAmount_; i++)
+        {
+            if(choosenSpawnPoints.Count == 0)
+            {
+                choosenSpawnPoints.Add(Random.Range(0, spawnpoints_.Length));
+                continue;
+            }
+            float tmp = Random.Range(0, spawnpoints_.Length);
+            while (choosenSpawnPoints.Contains(tmp))
+            {
+                tmp = Random.Range(0, spawnpoints_.Length);
+            }
+            choosenSpawnPoints.Add(tmp);
+        }
+
+        foreach(int nmbr in choosenSpawnPoints)
+        {
+            var pos = spawnpoints_[nmbr].transform.position;
+            pos.z = 0;
+            var comet = Instantiate(comet_, pos, Quaternion.identity, parent_.transform);
+        }
+        
     }
 }

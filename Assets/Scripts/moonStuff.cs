@@ -6,6 +6,7 @@ using UnityEngine;
 public class moonStuff : MonoBehaviour
 {
     public Transform earth_;
+    public GameObject particleSystem_;
     private Transform hand_;
     void Start()
     {
@@ -34,6 +35,10 @@ public class moonStuff : MonoBehaviour
         if (col.transform.name != "MoonBouncer")
         {
             hitFilter.MoonCometHit();
+            var prtSystem = Instantiate(particleSystem_, col.transform.position, Quaternion.identity);
+            ParticleSystem parts = prtSystem.GetComponent<ParticleSystem>();
+            float totalDuration = parts.duration + parts.startLifetime;
+            Destroy(prtSystem, totalDuration);
         }
         
     }
