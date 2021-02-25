@@ -33,5 +33,12 @@ public class hitFilter : MonoBehaviour
         
         instance.StartCoroutine(instance.cHit(0));
     }
+
+    public static void stopAll()
+    {
+        instance.filters_[0].enabled = false;
+        instance.filters_[1].enabled = false;
+        instance.transform.GetChild(2).GetComponent<Text>().enabled = true;
+    }
 }
 

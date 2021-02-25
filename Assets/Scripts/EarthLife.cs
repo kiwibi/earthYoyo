@@ -46,7 +46,11 @@ public class EarthLife : MonoBehaviour
             source_.Play();
             if (AmountOfLives_ <= 0)
             {
-                //lose
+                Time.timeScale = 0;
+                cameraShake.StopShake();
+                hitFilter.stopAll();
+                Application.Quit();
+                
 
                 
             }
