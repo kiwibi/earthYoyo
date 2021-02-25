@@ -49,7 +49,7 @@ public class EarthLife : MonoBehaviour
                 Time.timeScale = 0;
                 cameraShake.StopShake();
                 hitFilter.stopAll();
-                Application.Quit();
+                
                 
 
                 
