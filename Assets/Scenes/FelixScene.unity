@@ -356,8 +356,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 293131784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.000000018626, y: 0, z: 0}
-  m_LocalScale: {x: 0.20116, y: 0.20116, z: 0.20116}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.30116, y: 0.30116, z: 0.30116}
   m_Children: []
   m_Father: {fileID: 1147460147}
   m_RootOrder: 0
@@ -440,7 +440,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &664345934
 GameObject:
@@ -536,7 +536,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1000216293
 GameObject:
@@ -639,7 +639,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.24
+  m_Radius: 0.34
 --- !u!114 &1147460143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -653,6 +653,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   earth_: {fileID: 1260645707}
+  particleSystem_: {fileID: 5958193960790637626, guid: 81ca158a0010289459c9206ca3317438,
+    type: 3}
 --- !u!231 &1147460145
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -1028,7 +1030,7 @@ PrefabInstance:
     - target: {fileID: 9161610249512903749, guid: a59a22a24327c4b4dad57e86ab1688b1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9161610249512903749, guid: a59a22a24327c4b4dad57e86ab1688b1,
         type: 3}
