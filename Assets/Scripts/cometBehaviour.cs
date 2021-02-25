@@ -22,7 +22,7 @@ public class cometBehaviour : MonoBehaviour
         CurrentDir_ = earth_.transform.position - transform.position;
         CurrentDir_.Normalize();
         CurrentDir_.z = 0;
-
+        Rotate();
     }
 
     void Update()
@@ -38,9 +38,8 @@ public class cometBehaviour : MonoBehaviour
 
     void Rotate()
     {
-        Vector3 dir = transform.position - earth_.transform.position;
         Vector3 up = new Vector3(0, 0, 1);
-        var rotation = Quaternion.LookRotation(dir, up);
+        var rotation = Quaternion.LookRotation(CurrentDir_, up);
         rotation.x = 0;
         rotation.y = 0;
         transform.rotation = rotation;
