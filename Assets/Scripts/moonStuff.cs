@@ -40,7 +40,7 @@ public class moonStuff : MonoBehaviour
             hitFilter.MoonCometHit();
             var prtSystem = Instantiate(particleSystem_, col.transform.position, Quaternion.identity);
             ParticleSystem parts = prtSystem.GetComponent<ParticleSystem>();
-            float totalDuration = parts.duration + parts.startLifetime;
+            float totalDuration = parts.main.duration + parts.main.startLifetime.constant; 
             Destroy(prtSystem, totalDuration);
         }
         

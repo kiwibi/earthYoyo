@@ -217,8 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da4245becc43b546bedd9af0129ce33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeDuration_: 0.2
-  zoomShake_: 4.7
+  shakeDuration_: 0.25
+  zoomShake_: 4.6
   bumpDuration_: 0.12
 --- !u!1 &122932483
 GameObject:
@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoothSpeed: 0.01
-  bgrDivider_: 8
+  bgrDivider_: 4
 --- !u!212 &664345936
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -668,8 +668,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1b61a57d18a2b774ba80c0f62191870a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 0.86
+  m_Volume: 0.8
+  m_Pitch: 0.75
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -942,8 +942,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3592ff978bd678f4dae1e3769dd10d94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmountOfLives_: 2
-  bandAidFrequency_: 2
+  AmountOfLives_: 30
+  bandAidFrequency_: 4
   bandAid_: {fileID: 7469317564571752046, guid: bcb851fa03ae4604eb5f8b91233522b7,
     type: 3}
 --- !u!58 &1396745705
