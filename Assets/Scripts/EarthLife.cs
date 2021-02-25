@@ -12,8 +12,10 @@ public class EarthLife : MonoBehaviour
     private float bandAidAccumulator_;
     private GameObject earth_;
     private float earthScale_;
+    private AudioSource source_;
     void Start()
     {
+        source_ = GetComponent<AudioSource>();
         earth_ = GameObject.FindGameObjectWithTag("Earth");
         bandAidAccumulator_ = 0;
         earthScale_ = earth_.transform.GetChild(0).localScale.x;
@@ -41,7 +43,8 @@ public class EarthLife : MonoBehaviour
             AmountOfLives_--;
             hitFilter.CometEarthHit();
             cameraShake.Shake();
-            if(AmountOfLives_ <= 0)
+            source_.Play();
+            if (AmountOfLives_ <= 0)
             {
                 //lose
 
