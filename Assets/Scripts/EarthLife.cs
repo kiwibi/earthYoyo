@@ -9,6 +9,7 @@ public class EarthLife : MonoBehaviour
 
     public GameObject bandAid_;
 
+    public GameObject particleSystem_;
     private float bandAidAccumulator_;
     private GameObject earth_;
     private float earthScale_;
@@ -44,6 +45,8 @@ public class EarthLife : MonoBehaviour
             hitFilter.CometEarthHit();
             cameraShake.Shake();
             source_.Play();
+            var prtSystem = Instantiate(particleSystem_, col.transform.position, Quaternion.identity);
+            ParticleSystem parts = prtSystem.GetComponent<ParticleSystem>();
             if (AmountOfLives_ <= 0)
             {
                 Time.timeScale = 0;
