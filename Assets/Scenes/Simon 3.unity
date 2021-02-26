@@ -947,6 +947,8 @@ MonoBehaviour:
   bandAidFrequency_: 4
   bandAid_: {fileID: 7469317564571752046, guid: bcb851fa03ae4604eb5f8b91233522b7,
     type: 3}
+  particleSystem_: {fileID: 5958193960790637626, guid: a3df4ebfd1f47bf49830bbcbf6732168,
+    type: 3}
 --- !u!58 &1396745705
 CircleCollider2D:
   m_ObjectHideFlags: 0
